@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: mern-todo-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: FRONTEND_URL
+        value: https://todo-4m85vw2qk-prabhakars-projects-81f155e4.vercel.app
