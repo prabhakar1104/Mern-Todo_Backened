@@ -6,6 +6,10 @@ const mongoose = require("mongoose");
 const router = require("./routes/router");
 const authRouter = require("./routes/authrouter");
 
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 const PORT = process.env.PORT || 3001;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/test';
 const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
@@ -18,7 +22,6 @@ const allowedOrigins = [
 
 app.use(cors({
   origin: function(origin, callback) {
-    // allow requests with no origin (like mobile apps, curl requests)
     if (!origin) return callback(null, true);
     if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
