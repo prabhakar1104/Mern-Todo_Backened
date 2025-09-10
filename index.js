@@ -13,6 +13,7 @@ const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
 const allowedOrigins = [
   'https://todo-4m85vw2qk-prabhakars-projects-81f155e4.vercel.app',
   'https://todo-app-psi-ten-79.vercel.app',
+  'http://localhost:5173'
 ];
 
 app.use(cors({
