@@ -7,3 +7,13 @@ services:
     envVars:
       - key: FRONTEND_URL
         value: https://todo-4m85vw2qk-prabhakars-projects-81f155e4.vercel.app
+      - key: MONGODB_URI
+        value: mongodb+srv://heenamishra7658:V1qqKVBYM4zXSLLs@cluster0.djfoomf.mongodb.net/test
+      - key: JWT_SECRET
+        value: Prabhakar1104
+      - key: MAIL_HOST
+        value: smtp.gmail.com
+      - key: MAIL_USER
+        value: heenamishra7658@gmail.com
+      - key: MAIL_PASS
+        value: ckrc kxwl luzk dsdc

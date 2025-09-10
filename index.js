@@ -13,18 +13,17 @@ const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
 const allowedOrigins = [
   'https://todo-4m85vw2qk-prabhakars-projects-81f155e4.vercel.app',
   'https://todo-app-psi-ten-79.vercel.app',
-  'http://localhost:5173'
 ];
 
 app.use(cors({
   origin: function(origin, callback) {
     // allow requests with no origin (like mobile apps, curl requests)
     if (!origin) return callback(null, true);
-
-    if (allowedOrigins.indexOf(origin) === -1) {
-      return callback(new Error('CORS not allowed'));
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
     }
-    return callback(null, true);
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
